@@ -1,103 +1,104 @@
-import Image from "next/image";
-
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const cars = [
+    {
+      name: "Tesla Model S Plaid",
+      price: "$89,990",
+      img: "https://images.pexels.com/photos/1149831/pexels-photo-1149831.jpeg",
+    },
+    {
+      name: "BMW M4 Competition",
+      price: "$76,500",
+      img: "https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg",
+    },
+    {
+      name: "Mercedes-Benz G-Wagon",
+      price: "$156,450",
+      img: "https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg",
+    },
+    {
+      name: "Porsche 911 Carrera",
+      price: "$114,000",
+      img: "https://images.pexels.com/photos/210019/pexels-photo-210019.jpeg",
+    },
+    {
+      name: "Audi R8 V10 Plus",
+      price: "$142,000",
+      img: "https://images.pexels.com/photos/210019/pexels-photo-210019.jpeg",
+    },
+    {
+      name: "Range Rover Sport SVR",
+      price: "$121,500",
+      img: "https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg",
+    },
+  ];
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
+  return (
+    <main className="min-h-screen bg-gray-100">
+      {/* Navbar */}
+      <nav className="bg-white shadow-md py-4 px-8 flex justify-between items-center sticky top-0 z-50">
+        <h1 className="text-2xl font-bold text-blue-900">Car Dealership</h1>
+        <ul className="flex space-x-6 text-gray-700 font-medium">
+          <li className="hover:text-blue-900 cursor-pointer">Home</li>
+          <li className="hover:text-blue-900 cursor-pointer">Inventory</li>
+          <li className="hover:text-blue-900 cursor-pointer">About</li>
+          <li className="hover:text-blue-900 cursor-pointer">Contact</li>
+        </ul>
+      </nav>
+
+      {/* Hero Section */}
+      <section
+        className="h-[500px] flex items-center justify-center text-white text-center bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "url('https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg')",
+        }}
+      >
+        <div className="bg-black bg-opacity-50 p-8 rounded-lg">
+          <h2 className="text-5xl font-bold mb-4">Luxury Cars, Unmatched Deals</h2>
+          <p className="text-lg mb-6">
+            Browse our premium selection and drive away in your dream car today.
+          </p>
           <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#inventory"
+            className="bg-yellow-500 hover:bg-yellow-600 text-black px-6 py-3 rounded-lg font-semibold transition"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
+            Browse Inventory
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </section>
+
+      {/* Inventory Section */}
+      <section id="inventory" className="py-16 px-6 max-w-7xl mx-auto">
+        <h2 className="text-3xl font-bold text-center mb-12 text-blue-900">
+          Featured Vehicles
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {cars.map((car, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300"
+            >
+              <img
+                src={car.img}
+                alt={car.name}
+                className="w-full h-56 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="text-xl font-semibold text-gray-900">{car.name}</h3>
+                <p className="text-gray-700">{car.price}</p>
+                <button className="mt-4 w-full bg-blue-900 text-white py-2 rounded-lg hover:bg-blue-800 transition">
+                  View Details
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-blue-900 text-white text-center py-6 mt-16">
+        &copy; {new Date().getFullYear()} Car Dealership. All rights reserved.
       </footer>
-    </div>
+    </main>
   );
 }
